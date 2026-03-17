@@ -7,7 +7,7 @@ import { fetchRevenue, fetchLatestInvoices, fetchCardData } from '@/app/lib/data
 export default async function Page() {
   // Fetch all the data needed for the dashboard
   const revenue = await fetchRevenue();
-  // const latestInvoices = await fetchLatestInvoices();
+  const latestInvoices = await fetchLatestInvoices();
   const {
     totalPaidInvoices,
     totalPendingInvoices,
@@ -32,7 +32,7 @@ export default async function Page() {
       {/* Charts and Latest Invoices Section */}
       <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
         <RevenueChart revenue={revenue} />
-        {/* <LatestInvoices latestInvoices={latestInvoices} /> */}
+        <LatestInvoices latestInvoices={latestInvoices} />
       </div>
     </main>
   );
